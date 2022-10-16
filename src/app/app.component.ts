@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { TransitionService } from './service/transition.service';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'bank';
+  constructor(private transitionService: TransitionService) {}
+
+  transition($event: any) {
+    this.transitionService.adTransition($event);
+  }
 }

@@ -1,0 +1,35 @@
+<section class="container">
+  <form
+    class="formulario"
+    [formGroup]="transitionForm"
+    (ngSubmit)="transition()"
+  >
+    <h2 class="formulario__titulo">Nova transferência</h2>
+
+    <div class="form-field">
+      <label class="form-field__label" for="value">Valor</label>
+      <input
+        class="form-field__input"
+        id="value"
+        type="number"
+        name="valor"
+        formControlName="value"
+      />
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="destiny">Destino</label>
+      <input
+        class="form-field__input"
+        id="destiny"
+        type="text"
+        name="destiny"
+        formControlName="destiny"
+      />
+    </div>
+
+    <div class="botao-wrapper">
+      <button class="botao" type="submit">Transferir</button>
+    </div>
+  </form>
+</section>
