@@ -1,18 +1,22 @@
-<table class="tabela">
-  <thead class="tabela__cabecalho">
-    <th class="tabela__cabecalho__conteudo">Data</th>
-    <th class="tabela__cabecalho__conteudo">Valor</th>
-    <th class="tabela__cabecalho__conteudo">Destino</th>
-  </thead>
-  <tbody *ngIf="canShow(); else emptyList">
-    <tr class="tabela__linha" *ngFor="let trans of eventTransitions">
-      <td class="tabela__conteudo">{{ trans.data | date: "short" }}</td>
-      <td class="tabela__conteudo">{{ trans.value | currency }}</td>
-      <td class="tabela__conteudo">{{ trans.destiny }}</td>
-    </tr>
-  </tbody>
-</table>
+<section class="container">
+  <h2 class="titulo">Transferências</h2>
 
-<ng-template #emptyList>
-  <p>Nenhuma operação cadastrada</p>
-</ng-template>
+  <table class="tabela">
+    <thead class="tabela__cabecalho">
+      <th class="tabela__cabecalho__conteudo">Data</th>
+      <th class="tabela__cabecalho__conteudo">Valor</th>
+      <th class="tabela__cabecalho__conteudo">Destino</th>
+    </thead>
+    <tbody *ngIf="canShow(); else emptyList">
+      <tr class="tabela__linha" *ngFor="let trans of eventTransitions">
+        <td class="tabela__conteudo">{{ trans.data | date: "short" }}</td>
+        <td class="tabela__conteudo">{{ trans.valor | currency }}</td>
+        <td class="tabela__conteudo">{{ trans.destino }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #emptyList>
+    <p>Nenhuma operação cadastrada</p>
+  </ng-template>
+</section>

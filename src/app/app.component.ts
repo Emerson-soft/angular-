@@ -8,8 +8,4 @@ import { Component, EventEmitter } from '@angular/core';
 })
 export class AppComponent {
   constructor(private transitionService: TransitionService) {}
-
-  transition($event: any) {
-    this.transitionService.adTransition($event);
-  }
 }

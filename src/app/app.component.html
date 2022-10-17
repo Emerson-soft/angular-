@@ -1,3 +1,7 @@
-<app-transition (onTransition)="transition($event)"></app-transition>
-
-<app-extrato></app-extrato>
+<header>
+  <a routerLink="extrato">Bytebank</a>
+  <a routerLink="transition" routerLinkActive="active">Nova Transferência</a>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

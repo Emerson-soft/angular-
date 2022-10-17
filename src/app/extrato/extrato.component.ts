@@ -1,3 +1,4 @@
+import { Transition } from './../../interface/transistionInterface';
 import { TransitionService } from './../service/transition.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -6,11 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './extrato.component.html',
   styleUrls: ['./extrato.component.scss'],
 })
-export class ExtratoComponent {
-  eventTransitions: any[];
+export class ExtratoComponent implements OnInit {
+  eventTransitions: Transition[];
 
-  constructor(transitionService: TransitionService) {
-    this.eventTransitions = transitionService.getTransition();
+  constructor(private transitionService: TransitionService) {
+    this.eventTransitions = [];
+  }
+
+  ngOnInit(): void {
+    this.transitionService.getTransition().subscribe((data) => {
+      this.eventTransitions = data;
+    });
   }
 
   canShow(): boolean {

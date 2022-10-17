@@ -1,0 +1,26 @@
+header {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+ a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  transition: filter 0.2s ;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+ }
+
+ .active {
+  display: none;
+ }
+}
